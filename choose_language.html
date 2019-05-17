@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>The Materialize Example</title>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+      <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
+      </script>             
+   </head>
+   <body>
+
+   <nav class="transparent" role="navigation">
+      <div class="row center">
+         <div class="col s1 nav-col">
+            <a class="grey-text text-darken-2 icn-label" href="#"><i class="material-icons">arrow_back</i>Back</a>
+         </div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1 nav-col">
+            <a class="grey-text text-darken-2 icn-label" href="#"><i class="material-icons">close</i>Esc</a>
+         </div>
+      </div>
+   </nav>
+
+   <div class="container">
+      <div class="row center">
+         <div class="col s12">
+            <h5>Choose Language</h5>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="col s3"></div>
+         <div class="col s6">
+            <div class="row">
+
+              <h6 class"bold"></h6>
+              <p></p>
+                    <div class="collection">
+                      <table class="select-box highlight">
+                              <tbody>
+                                <tr class="clickable-row clickable-row-unselected">
+                                  <td>All<br></td>
+                                  <td class="check-container"><a href="#"><i class="material-icons checked-circle checked-color right">check_circle</i></a></td>
+                                </tr>
+                                <tr class="clickable-row">
+                                  <td>English<br></td>
+                                  <td class="check-container"><i class="material-icons checked-circle checked-color right">check_circle</i></td>
+                                </tr>
+                                <tr class="clickable-row clickable-row-unselected">
+                                  <td>Dutch<br></td>
+                                  <td class="check-container"><i class="material-icons checked-circle checked-color right">check_circle</i></td>
+                                </tr>
+                                <tr class="clickable-row clickable-row-unselected">
+                                  <td>French<br></td>
+                                  <td class="check-container"><i class="material-icons checked-circle checked-color right">check_circle</i></td>
+                                </tr>
+                                <tr class="clickable-row clickable-row-unselected">
+                                  <td>Spanish<br></td>
+                                  <td class="check-container"><i class="material-icons checked-circle checked-color right">check_circle</i></td>
+                                </tr>     
+                                <tr class="clickable-row clickable-row-unselected">
+                                  <td>German<br></td>
+                                  <td class="check-container"><i class="material-icons checked-circle checked-color right">check_circle</i></td>
+                                </tr> 
+                                <tr class="clickable-row clickable-row-unselected">
+                                  <td>Italian<br></td>
+                                  <td class="check-container"><i class="material-icons checked-circle checked-color right">check_circle</i></td>
+                                </tr>                                                              
+                              </tbody>
+                            </table>
+                      </div>
+              <p class="center">Collecting results from <b>All Countries</b> (<a href="file:///C:/Users/officera/Desktop/QuickSearch-Proto/choose_country.html">change</a>).</p>
+            </div>
+
+         <div class="row center">
+               <a class="waves-effect waves-light btn light-blue darken-3">Show Results</a>
+         </div>
+         </div>
+         <div class="col s3"></div>
+      </div>
+
+   </div>
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+     $(document).ready(function(){
+    $('input.autocomplete').autocomplete({
+      data: {
+        "Apple": null,
+        "Microsoft": null,
+        "Google": 'https://placehold.it/250x250'
+      },
+    });
+  });
+
+  $('.chips').chips();
+  $('.chips-initial').chips({
+    data: [{
+      tag: 'Apple',
+    }, {
+      tag: 'Microsoft',
+    }, {
+      tag: 'Google',
+    }],
+  });
+  $('.chips-autocomplete').chips({
+    autocompleteOptions: {
+      data: {
+        'Apple': null,
+        'Microsoft': null,
+        'Google': null
+      },
+      limit: Infinity,
+      minLength: 1
+    }
+  });
+  $(document).ready(function(){
+    $('.tooltipped').tooltip();
+  });
+    $(document).ready(function(){
+    $('select').formSelect();
+  });
+
+jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        
+    });
+});
+
+$( ".clickable-row" ).click(function() {
+  $( this ).toggleClass( "clickable-row-unselected" );
+});
+</script>
+
+
+   </body>
+</html>

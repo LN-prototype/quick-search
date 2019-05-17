@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>The Materialize Example</title>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+      <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
+      </script>             
+   </head>
+   <body>
+
+   <nav class="transparent" role="navigation">
+      <div class="row center">
+         <div class="col s1 nav-col">
+            <a class="grey-text text-darken-2 icn-label" href="#"><i class="material-icons">arrow_back</i>Back</a>
+         </div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1"></div>
+         <div class="col s1 nav-col">
+            <a class="grey-text text-darken-2 icn-label" href="#"><i class="material-icons">close</i>Esc</a>
+         </div>
+      </div>
+   </nav>
+
+   <div class="container">
+      <div class="row center">
+         <div class="col s12">
+            <h5>Remove the Noise</h5>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="col s3"></div>
+         <div class="col s6">
+            <div class="row">
+
+              <h6 class"bold">Recommended Noise Filters <i class="material-icons grey-text tooltipped" data-position="right" data-tooltip="Good for removing irrelevant and unwanted articles from your results">help_outline</i></h6>
+              <p>We will <b>not</b> collect results in any of the selected categories.</p>
+                    <div class="collection">
+                      <table class="select-box highlight">
+                              <tbody>
+                                <tr class="clickable-row">
+                                  <td>Business Reports & Forecasts<br><span class="content-description">Business, industry forecasts and reports</span></td>
+                                  <td class="check-container"><a href="#"><i class="material-icons checked-circle checked-color right">check_circle</i></a></td>
+                                </tr>
+                                <tr class="clickable-row">
+                                  <td>Fake News<br><span class="content-description">Fake, extreme bias or satirical content</span></td>
+                                  <td class="check-container"><i class="material-icons checked-circle checked-color right">check_circle</i></td>
+                                </tr class="clickable-row">
+                                <tr class="clickable-row">
+                                  <td>Financial Market Updates<br><span class="content-description">Bonds, stocks, shares and market updates </span></td>
+                                  <td class="check-container"><i class="material-icons checked-circle checked-color right">check_circle</i></td>
+                                </tr>
+                                <tr class="clickable-row">
+                                  <td>High Volume, Low Rank & Low Reach<br><span class="content-description">High Volume, low value and low reach articles</span></td>
+                                  <td class="check-container"><i class="material-icons checked-circle checked-color right">check_circle</i></td>
+                                </tr>
+                                <tr class="clickable-row">
+                                  <td>Job Listings<br><span class="content-description">Job adverts and job listings</span></td>
+                                  <td class="check-container"><i class="material-icons checked-circle checked-color right">check_circle</i></td>
+                                </tr>     
+                                <tr class="clickable-row">
+                                  <td>Obituaries<br><span class="content-description">Biographies and notices of death</span></td>
+                                  <td class="check-container"><i class="material-icons checked-circle checked-color right">check_circle</i></td>
+                                </tr> 
+                                <tr class="clickable-row">
+                                  <td>Press Releases & Wires<br><span class="content-description">Press release feeds and newswires</span></td>
+                                  <td class="check-container"><i class="material-icons checked-circle checked-color right">check_circle</i></td>
+                                </tr>   
+                                <tr class="clickable-row">
+                                  <td>Bsuiness Tenders<br><span class="content-description">Business tenders and contract rewards</span></td>
+                                  <td class="check-container"><i class="material-icons checked-circle checked-color right">check_circle</i></td>
+                                </tr>                                                              
+                              </tbody>
+                            </table>
+                      </div>
+            </div>
+         <div class="row center">
+               <a href="file:///C:/Users/officera/Desktop/QuickSearch-Proto/choose_content.html" class="waves-effect waves-light btn light-blue darken-3">Next</a>
+         </div>
+         </div>
+         <div class="col s3"></div>
+      </div>
+
+   </div>
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+     $(document).ready(function(){
+    $('input.autocomplete').autocomplete({
+      data: {
+        "Apple": null,
+        "Microsoft": null,
+        "Google": 'https://placehold.it/250x250'
+      },
+    });
+  });
+
+  $('.chips').chips();
+  $('.chips-initial').chips({
+    data: [{
+      tag: 'Apple',
+    }, {
+      tag: 'Microsoft',
+    }, {
+      tag: 'Google',
+    }],
+  });
+  $('.chips-autocomplete').chips({
+    autocompleteOptions: {
+      data: {
+        'Apple': null,
+        'Microsoft': null,
+        'Google': null
+      },
+      limit: Infinity,
+      minLength: 1
+    }
+  });
+  $(document).ready(function(){
+    $('.tooltipped').tooltip();
+  });
+    $(document).ready(function(){
+    $('select').formSelect();
+  });
+
+jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        
+    });
+});
+
+$( ".clickable-row" ).click(function() {
+  $( this ).toggleClass( "clickable-row-unselected" );
+});
+</script>
+
+
+   </body>
+</html>
