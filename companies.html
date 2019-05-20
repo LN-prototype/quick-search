@@ -47,8 +47,8 @@
                <div class="chip-help">Press 'enter' to add</div>
             </div>
 
-            <div class="row center">
-               <p><a href="#" class="keywords-panel-toggle">Add keywords to include</a> in your search.</p>
+            <div class="row center keywords-panel-toggle">
+               <p><a href="#">Add keywords to include</a> in your search.</p>
             </div>
 
             <div class="keywords-panel">
@@ -88,7 +88,8 @@
             },
          });
 
-         $(".keywords-panel-toggle").click(function () {
+         $(".keywords-panel-toggle a").click(function () {
+            $(".keywords-panel-toggle").slideToggle(300);
             $(".keywords-panel").slideToggle(300);
          });
 

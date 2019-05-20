@@ -49,7 +49,7 @@
         <p>We will <b>not</b> collect results in any of the selected categories. <i
             class="material-icons grey-text tooltipped" data-position="right"
             data-tooltip="Good for removing irrelevant and unwanted articles from your search">help_outline</i></p>
-        <div class="collection select-box-wrapper" data-simplebar>
+        <div class="collection select-box-wrapper" data-simplebar data-simplebar-auto-hide="false">
           <table class="select-box highlight">
             <tbody>
               <tr class="clickable-row">
@@ -101,8 +101,8 @@
           </table>
         </div>
 
-        <p class="center-align">
-          <a href="#" class="keywords-panel-toggle">Add keywords to exclude</a> from your search.
+        <p class="center-align keywords-panel-toggle">
+          <a href="#">Add keywords to exclude</a> from your search.
         </p>
 
         <div class="keywords-panel">
@@ -135,7 +135,8 @@
       $('.tooltipped').tooltip();
       $('select').formSelect();
 
-      $(".keywords-panel-toggle").click(function () {
+      $(".keywords-panel-toggle a").click(function () {
+        $(".keywords-panel-toggle").slideToggle(300);
         $(".keywords-panel").slideToggle(300);
       });
 

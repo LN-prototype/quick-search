@@ -39,7 +39,6 @@ nav {
 
 body {
   background-color: #F4F6F9!important;
-  font-family: 'Lato', sans-serif;
 }
 
 nav i {
@@ -117,6 +116,10 @@ h6 {
 
 .check-container {
   width: 50px;
+}
+
+.simplebar-content .check-container {
+  padding-right: 20px !important;
 }
 
 .clickable-row:hover {
