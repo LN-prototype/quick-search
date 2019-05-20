@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>Newsdesk</title>
-      <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
-      <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
-      </script>             
-   </head>
-   <body>
+
+<head>
+   <title>Newsdesk</title>
+   <meta name="viewport" content="width = device-width, initial-scale = 1">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <link type="text/css" rel="stylesheet" href="css/custom.css" media="screen,projection" />
+   </script>
+</head>
+
+<body>
 
    <nav class="transparent" role="navigation">
       <div class="row center">
@@ -40,73 +42,83 @@
       <div class="row">
          <div class="col s3"></div>
          <div class="col s6">
-              <div class="chips chips-autocomplete input-field chips-placeholder">
-                  <input class="custom-class">
-                  <div class="chip-help">Press 'enter' to add</div>
-              </div>
+            <div class="chips chips-autocomplete input-field chips-placeholder">
+               <input class="custom-class" autofocus />
+               <div class="chip-help">Press 'enter' to add</div>
+            </div>
 
-         <div class="row center add-keyword-includes">
-               <p><a href="#">Add keywords to include</a> in your search.</p>
-         </div>
-         
-         <!--<div class="keyword-includes">
-              <h6 class"bold">Included keywords <i class="material-icons blue-grey-text text-lighten-3 tooltipped" data-position="right" data-tooltip="Keyword includes are good for adding terms or phrases that will make your results more specific">help_outline</i></h6>
-              <p>We will show results that contain any of these keywords, plus the keywords entered above.</p>
-              <div class="chips chips-autocomplete input-field chips-placeholder>
-                  <input class="custom-class">
-                  <div class="chip-help">Press 'enter' to add</div>
-              </div>
-         </div>-->
+            <div class="row center">
+               <p><a href="#" class="keywords-panel-toggle">Add keywords to include</a> in your search.</p>
+            </div>
 
-         <div class="row center">
+            <div class="keywords-panel">
+               <h6>Included keywords <i class="material-icons blue-grey-text text-lighten-3 tooltipped"
+                     data-position="right"
+                     data-tooltip="Keyword includes are good for adding terms or phrases that will make your results more specific">help_outline</i>
+               </h6>
+               <p>We will show results that contain any of these keywords, plus the keywords entered above.</p>
+               <div class="chips chips-autocomplete input-field chips-placeholder">
+                  <input class=" custom-class" />
+                  <div class="chip-help">Press 'enter' to add</div>
+               </div>
+            </div>
+
+            <div class="row center">
                <a href="remove_noise.html" class="waves-effect waves-light btn light-blue darken-3">Next</a>
-         </div>
+            </div>
          </div>
          <div class="col s3"></div>
       </div>
 
    </div>
 
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <!--Import jQuery before materialize.js-->
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<script>
-     $(document).ready(function(){
-    $('input.autocomplete').autocomplete({
-      data: {
-        "Apple": null,
-        "Microsoft": null,
-        "Google": 'https://placehold.it/250x250'
-      },
-    });
-  });
+   <script>
+      $(document).ready(function () {
+         $('.tooltipped').tooltip();
 
-  $('.chips').chips();
-  $('.chips-initial').chips({
-    data: [{
-      tag: 'Apple',
-    }, {
-      tag: 'Microsoft',
-    }, {
-      tag: 'Google',
-    }],
-  });
-  $('.chips-autocomplete').chips({
-    placeholder: 'Enter company',
-    secondaryPlaceholder: 'Add another',
-    autocompleteOptions: {
-      data: {
-//        'Apple': null,
-//       'Microsoft': null,
-//        'Google': null
-      },
-      limit: Infinity,
-      minLength: 1
-    }
-  });
-</script>
+         $(".keywords-panel-toggle").click(function () {
+            $(".keywords-panel").slideToggle(300);
+         });
+
+         $('input.autocomplete').autocomplete({
+            data: {
+               "Apple": null,
+               "Microsoft": null,
+               "Google": 'https://placehold.it/250x250'
+            },
+         });
+
+         $('.chips').chips();
+         $('.chips-initial').chips({
+            data: [{
+               tag: 'Apple',
+            }, {
+               tag: 'Microsoft',
+            }, {
+               tag: 'Google',
+            }],
+         });
+         $('.chips-autocomplete').chips({
+            placeholder: 'Enter company',
+            secondaryPlaceholder: 'Add another',
+            autocompleteOptions: {
+               data: {
+                  //        'Apple': null,
+                  //       'Microsoft': null,
+                  //        'Google': null
+               },
+               limit: Infinity,
+               minLength: 1
+            }
+         });
+      });
+   </script>
 
 
-   </body>
+</body>
+
 </html>

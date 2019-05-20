@@ -1,92 +1,159 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>Newsdesk</title>
-      <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
-      <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
-      </script>             
-   </head>
-   <body>
 
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo"><img src="images/LN_newsdesk.png" alt="Newsdesk logo"></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
+<head>
+  <title>Newsdesk</title>
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link type="text/css" rel="stylesheet" href="css/newsdesk.css" />
+  <link type="text/css" rel="stylesheet" href="css/custom.css" media="screen,projection" />
+  </script>
+</head>
+
+<body>
+
+  <header class="app-header">
+    <div class="app-header__top-bar">
+      <div class="app-header__logo">
+        <span class="app-header__logo-text">
+          LexisNexis Newsdesk<span class="app-header__trademark">®</span>
+        </span>
+      </div>
+      <a class="app-header__button app-header__button--nav app-header__button--dashboard"
+        href="/dashboard">Dashboard</a>
+      <a class="app-header__button app-header__button--nav app-header__button--search" href="/search">Search</a>
+      <a class="app-header__button app-header__button--nav app-header__button--analyze" href="/analyze">Analyze</a>
+      <a class="app-header__button app-header__button--nav app-header__button--share" href="/share">Share</a>
     </div>
-  </nav>
+  </header>
 
-   <div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col s1"></div>
+      <div class="col s12 center">
+        <div class="quick-search-row">
+          <h4>Explore what the world is saying</h4>
+          <p class="psub-heading">Start monitoring your company, brand, competitors or people with the latest content
+            from around the globe.</p>
+        </div>
+      </div>
+
+
       <div class="row">
-         <div class="col s1"></div>
-         <div class="col s12 center">
-            <div class="quick-search-row">
-                <h4>Explore what the world is saying</h4>
-                <p class="psub-heading">Start monitoring your company, brand, competitors or people with the latest content from around the globe.</p>
+        <div class="col s12">
+          <ul class="tabs customized">
+            <li class="tab "><a class="active" href="#quick-search-area">Quick Search</a></li>
+            <li class="tab "><a href="#boolean-search-area">Boolean Search</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Search Area -->
+        <div class="row" id="quick-search-area">
+          <div class="col s3 center">
+            <div class="quick-search-types">
+              <a href="company.html" class="quick-search-type-link">
+                <b>Company or Brand </br><span>Track mentions of your company, organization or brand </span></b>
+              </a>
             </div>
-         </div>
-          
-           
-  <div class="row">
-    <div class="col s12">
-      <ul class="tabs customized">
-        <li class="tab "><a class="active" href="#test1">Quick Search</a></li>
-        <li class="tab "><a href="#test2">Boolean Search</a></li>
-      </ul>
+          </div>
+          <div class="col s3 center">
+            <div class="quick-search-types">
+              <a href="companies.html" class="quick-search-type-link">
+                <b>Competitors </br><span>Track mentions of your competitors </span></b></a>
+            </div>
+
+          </div>
+          <div class="col s3 center">
+            <div class="quick-search-types">
+              <a href="people.html" class="quick-search-type-link">
+                <b>Person </br><span>Track mentions about a person or people </span></b></a>
+            </div>
+          </div>
+
+          <div class="col s3 center">
+            <div class="quick-search-types">
+              <a href="topic_industry.html" class="quick-search-type-link">
+                <b>Topic or Industry </br><span>Track mentions of an industry topic or keyword </span></b></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Boolean Search Area -->
+        <div class="search-box-v2-container react-dom-wrapper-component-container" id="boolean-search-area">
+          <div class="search-area">
+            <div class="search-area__box">
+              <div class="search-area__search">
+                <div class="search-area__element-label search-area__search-label">What</div>
+                <div class="search-area__search-input">
+                  <div class="search-area__search">
+                    <div class="search-area__new-search rich-search-box">
+                      <textarea placeholder="Enter a company, person or keyword" tabindex="-1"
+                        style="position: absolute; top: -9999px;"></textarea>
+                      <div
+                        class="rich-search-box__content-wrapper configurable-list rich-search-box__validator--enabled">
+                        <div class="rich-search-box__hidden-content configurable-list"><span
+                            class="rich-search-box__placeholder">Enter a company, person or keyword</span></div>
+                        <div contenteditable="true" class="rich-search-box__content ui-autocomplete-input"
+                          autocomplete="off"><span class="rich-search-box__placeholder">Enter a company, person or
+                            keyword</span></div><i class="rich-search-box__validator-status fo-icon"
+                          data-hasqtip="0"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="drop-down search-area__element">
+                <div class="drop-down__trigger search-area__dropdown--trigger search-filter-media-type__trigger">
+                  <div class="search-area__element-label">Which media type</div>
+                  <div class="search-area__element-input">
+                    <div class="search-area__element-value">Online News</div><i class="search-area__element-arrow"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="drop-down search-area__element search-filter-location">
+                <div class="drop-down__trigger search-area__dropdown--trigger search-filter-location__trigger">
+                  <div class="search-area__element-label">Where</div>
+                  <div class="search-area__element-input">
+                    <div class="search-area__element-value">Everywhere</div><i class="search-area__element-arrow"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="drop-down search-area__element">
+                <div class="drop-down__trigger search-area__dropdown--trigger search-filter-date__trigger">
+                  <div class="search-area__element-label">When</div>
+                  <div class="search-area__element-input">
+                    <div class="search-area__element-value">All Dates</div><i class="search-area__element-arrow"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="drop-down search-area__element search-filter-language">
+                <div class="drop-down__trigger search-area__dropdown--trigger search-filter-language__trigger">
+                  <div class="search-area__element-label">Which languages</div>
+                  <div class="search-area__element-input">
+                    <div class="search-area__element-value">English</div><i class="search-area__element-arrow"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="pendo-search-button search-area__element search-area__search-trigger fo-icon fo-icon-Search">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
 
-      <div class="row">
-        <div class="col s3 center">
-             <div class="quick-search-types">
-                <a href="company.html" class="quick-search-type-link">
-                  <b>Company or Brand </br><span>Track mentions of your company, organization or brand </span></b>
-                </a>
-             </div>
-        </div>
-        <div class="col s3 center">
-              <div class="quick-search-types">
-                <a href="companies.html" class="quick-search-type-link">
-                  <b>Competitors </br><span>Track mentions of your competitors </span></b></a>
-             </div>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-        </div>
-        <div class="col s3 center">
-              <div class="quick-search-types">
-                <a href="people.html" class="quick-search-type-link">
-                  <b>Person </br><span>Track mentions about a person or people </span></b></a>
-             </div>
-        </div>
+  <script>
+    $(document).ready(function () {
+      $('.tabs').tabs();
+    });
+  </script>
+</body>
 
-        <div class="col s3 center">
-              <div class="quick-search-types">
-                <a href="topic_industry.html" class="quick-search-type-link">
-                  <b>Topic or Industry </br><span>Track mentions of an industry topic or keyword </span></b></a>
-             </div>
-        </div>
-      </div>
-        <div class="col s1"></div>
-
-
-         
-         
-      </div>
-   </div>
-
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-<script>
-  $(document).ready(function(){
-    $('.tabs').tabs();
-  });
-</script>
-
-
-   </body>
 </html>
