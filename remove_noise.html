@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>The Materialize Example</title>
+      <title>Newsdesk</title>
       <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
       <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -26,7 +26,7 @@
          <div class="col s1"></div>
          <div class="col s1"></div>
          <div class="col s1 nav-col">
-            <a class="grey-text text-darken-2 icn-label" href="#"><i class="material-icons">close</i>Esc</a>
+            <a class="grey-text text-darken-2 icn-label" href="index.html"><i class="material-icons">close</i>Esc</a>
          </div>
       </div>
    </nav>
@@ -41,12 +41,10 @@
       <div class="row">
          <div class="col s3"></div>
          <div class="col s6">
-            <div class="row">
-
-              <h6 class"bold">Recommended Noise Filters <i class="material-icons grey-text tooltipped" data-position="right" data-tooltip="Good for removing irrelevant and unwanted articles from your results">help_outline</i></h6>
-              <p>We will <b>not</b> collect results in any of the selected categories.</p>
+              <!--<h6 class"bold">Noise Filters </h6>-->
+              <p>We will <b>not</b> collect results in any of the selected categories. <i class="material-icons grey-text tooltipped" data-position="right" data-tooltip="Good for removing irrelevant and unwanted articles from your search">help_outline</i></p>
                     <div class="collection">
-                      <table class="select-box highlight">
+                      <table class="select-box highlight remove_noise">
                               <tbody>
                                 <tr class="clickable-row">
                                   <td>Business Reports & Forecasts<br><span class="content-description">Business, industry forecasts and reports</span></td>
@@ -83,9 +81,22 @@
                               </tbody>
                             </table>
                       </div>
-            </div>
+
          <div class="row center">
-               <a href="file:///C:/Users/officera/Desktop/QuickSearch-Proto/choose_content.html" class="waves-effect waves-light btn light-blue darken-3">Next</a>
+               <p><a href="#">Add keywords to exclude</a> from your search.</p>
+         </div>
+
+         <!--<div class="keyword-excludes">
+              <h6 class"bold">Excluded keywords <i class="material-icons blue-grey-text text-lighten-3 tooltipped" data-position="right" data-tooltip="Keyword exlcudes are good for excluding words or phrases you do not want to retrieve in your results - helps reduce false positives">help_outline</i></h6>
+              <p>We will <b>not</b> show results with any of the following keywords.</p>
+              <div class="chips chips-autocomplete input-field chips-placeholder>
+                  <input class="custom-class" >
+                  <div class="chip-help">Press 'enter' to add</div>
+              </div>
+         </div>-->
+
+         <div class="row center">
+               <a href="choose_content.html" class="waves-effect waves-light btn light-blue darken-3">Next</a>
          </div>
          </div>
          <div class="col s3"></div>

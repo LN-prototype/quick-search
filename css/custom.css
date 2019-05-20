@@ -74,8 +74,13 @@ h6 {
   display:block;
   overflow:auto;
   background-color: #FFF;
-  max-height: 305px;
+  
 }
+
+.remove_noise tbody {
+  max-height: 230px;
+}
+
 .select-box thead, tbody tr {
   display:table;
   width:100%;
@@ -357,4 +362,5 @@ ul.customized {
   margin: 0 auto;
   color: #999999;
 }
+
 
