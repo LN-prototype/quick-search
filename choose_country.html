@@ -105,38 +105,23 @@
       $('.tooltipped').tooltip();
       $('select').formSelect();
 
-      $('input.autocomplete').autocomplete({
-        data: {
-          "Apple": null,
-          "Microsoft": null,
-          "Google": 'https://placehold.it/250x250'
-        },
-      });
-
-      $('.chips').chips();
-      $('.chips-initial').chips({
-        data: [{
-          tag: 'Apple',
-        }, {
-          tag: 'Microsoft',
-        }, {
-          tag: 'Google',
-        }],
-      });
-      $('.chips-autocomplete').chips({
-        autocompleteOptions: {
-          data: {
-            'Apple': null,
-            'Microsoft': null,
-            'Google': null
-          },
-          limit: Infinity,
-          minLength: 1
-        }
+      var unselectedRows = JSON.parse(sessionStorage.getItem('choose-country')) || [];
+      unselectedRows.forEach(function (rowIndex) {
+        $($(".clickable-row")[rowIndex]).addClass("clickable-row-unselected");
       });
 
       $(".clickable-row").click(function () {
         $(this).toggleClass("clickable-row-unselected");
+
+        var unselectedRows = [];
+        $('.clickable-row').each(function (index) {
+          if ($(this).hasClass('clickable-row-unselected')) {
+            unselectedRows.push(index);
+          } else {
+            delete unselectedRows[index];
+          }
+        });
+        sessionStorage.setItem('choose-country', JSON.stringify(unselectedRows));
       });
     });
   </script>

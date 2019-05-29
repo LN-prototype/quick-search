@@ -106,12 +106,15 @@
         </p>
 
         <div class="keywords-panel">
-          <h6>Add keywords to exclude <i class="material-icons blue-grey-text text-lighten-3 tooltipped" data-position="right"
+          <h6>Add keywords to exclude <i class="material-icons blue-grey-text text-lighten-3 tooltipped"
+              data-position="right"
               data-tooltip="Keyword exlcudes are good for excluding words or phrases you do not want to retrieve in your results - helps reduce false positives">help_outline</i>
           </h6>
           <p>We will <b>not</b> show results with any of the following keywords.</p>
-          <div class="chips chips-autocomplete input-field chips-placeholder">
-            <input class=" custom-class" />
+          <div class="chips-container">
+            <div class="chips chips-remove-noise-keywords">
+              <input class=" custom-class" />
+            </div>
             <div class="chip-help">Press 'enter' to add</div>
           </div>
         </div>
@@ -140,38 +143,37 @@
         $(".keywords-panel").slideToggle(300);
       });
 
-      $('input.autocomplete').autocomplete({
-        data: {
-          "Apple": null,
-          "Microsoft": null,
-          "Google": 'https://placehold.it/250x250'
-        },
-      });
-
-      $('.chips').chips();
-      $('.chips-initial').chips({
-        data: [{
-          tag: 'Apple',
-        }, {
-          tag: 'Microsoft',
-        }, {
-          tag: 'Google',
-        }],
-      });
-      $('.chips-autocomplete').chips({
-        autocompleteOptions: {
-          data: {
-            'Apple': null,
-            'Microsoft': null,
-            'Google': null
-          },
-          limit: Infinity,
-          minLength: 1
-        }
+      var unselectedRows = JSON.parse(sessionStorage.getItem('remove-noise')) || [];
+      unselectedRows.forEach(function (rowIndex) {
+        $($(".clickable-row")[rowIndex]).addClass("clickable-row-unselected");
       });
 
       $(".clickable-row").click(function () {
         $(this).toggleClass("clickable-row-unselected");
+
+        var unselectedRows = [];
+        $('.clickable-row').each(function (index) {
+          if ($(this).hasClass('clickable-row-unselected')) {
+            unselectedRows.push(index);
+          } else {
+            delete unselectedRows[index];
+          }
+        });
+        sessionStorage.setItem('remove-noise', JSON.stringify(unselectedRows));
+      });
+
+      $('.chips-remove-noise-keywords').chips({
+        data: JSON.parse(sessionStorage.getItem('remove-noise-keywords')) || [],
+        onChipAdd: function (e, data) {
+          sessionStorage.setItem('remove-noise-keywords', JSON.stringify(M.Chips.getInstance($('.chips-remove-noise-keywords')).chipsData));
+        },
+        onChipDelete: function (e, data) {
+          sessionStorage.setItem('remove-noise-keywords', JSON.stringify(M.Chips.getInstance($('.chips-remove-noise-keywords')).chipsData));
+        }
+      });
+      $(".chips-remove-noise-keywords input").val(sessionStorage.getItem('remove-noise-keywords-input'));
+      $(".chips-remove-noise-keywords input").change(function (ev) {
+        sessionStorage.setItem('remove-noise-keywords-input', ev.target.value || '');
       });
     });
   </script>
