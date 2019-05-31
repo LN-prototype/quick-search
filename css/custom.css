@@ -23,6 +23,10 @@ a {
   background-color: #0067b1;
 }
 
+.psub-heading {
+  font-size: 18px;
+}
+
 nav {
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -143,15 +147,6 @@ tr {
 }
 
 /*INPUTS*/
-.chips-container {
-  font-size: 13px;
-  font-weight: 500;
-  position: relative;
-  background-color: #fff;
-  border: 1px solid #bcbec0;
-  border-radius: 2px;
-}
-
 .chips {
     display: inline-block;
     font-size: 13px;
@@ -159,7 +154,9 @@ tr {
     color: rgba(0,0,0,0.6);
     line-height: 28px;
     padding: 6px 6px 6px 6px;
-    border: none !important;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 1px solid #bcbec0;
     margin: 0 0 0 0;
     width: 100%;
     min-height: 85px;
@@ -254,7 +251,7 @@ tr {
    }
 
 .quick-search-row {
-  margin: 50px 0 30px 0;
+  margin: 50px 0 50px 0;
 }
 
 .quick-search-types {
@@ -276,6 +273,9 @@ a.quick-search-type-link {
     padding: 50px 20px 50px 20px;
     transition: 0.3s;
     position: relative;
+    min-height: 170px!important;
+    max-height: 170px!important;
+    font-size: 16px;
 }
 
 .quick-search-type-link i {
@@ -298,7 +298,7 @@ a.quick-search-type-link:hover {
 }
 
 .quick-search-type-link span {
-    font-size: 11px;
+    font-size: 14px;
     color: rgba(0,0,0,0.87);
     font-weight: 400;
     line-height: 18px;
@@ -308,6 +308,10 @@ a.quick-search-type-link:hover {
 
 ul.customized li {
     text-transform: none!important;
+}
+
+.tabs .tab a {
+  font-size: 16px;
 }
 
 ul.customized {
