@@ -147,6 +147,15 @@ tr {
 }
 
 /*INPUTS*/
+.chips-container {	
+  font-size: 13px;	
+  font-weight: 500;	
+  position: relative;	
+  background-color: #fff;	
+  border: 1px solid #bcbec0;	
+  border-radius: 2px;	
+}
+
 .chips {
     display: inline-block;
     font-size: 13px;
@@ -154,9 +163,7 @@ tr {
     color: rgba(0,0,0,0.6);
     line-height: 28px;
     padding: 6px 6px 6px 6px;
-    border-radius: 2px;
-    background-color: #fff;
-    border: 1px solid #bcbec0;
+    border: none !important;
     margin: 0 0 0 0;
     width: 100%;
     min-height: 85px;
