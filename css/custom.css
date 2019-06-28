@@ -78,7 +78,7 @@ h6 {
 .select-box-wrapper {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
-  max-height: 230px;
+  max-height: 250px;
   overflow-y: auto;
 }
 

@@ -43,29 +43,42 @@
          <div class="col s3"></div>
          <div class="col s6">
             <div class="chips-container">
-               <div class="chips chips-people">
-                  <input class="custom-class" autofocus />
+               <div class="chips chips-company">
+                  <input class="custom-class" autofocus>
                </div>
                <div class="chip-help">Press 'enter' to add</div>
             </div>
 
             <div class="row center keywords-panel-toggle">
-               <p><a href="#">Add keywords to include</a> in your search.</p>
+               <p style="font-size:16px;"><a href="#">Add keywords</a> to refine your search further</p>
             </div>
 
             <div class="keywords-panel">
                <br>
-               <h6>Add keywords to include <i class="material-icons blue-grey-text text-lighten-3 tooltipped"
+
+               <h6>Keywords to include</h6>
+               <p>We will show results that contain <b>any</b> of these keywords. <i class="material-icons blue-grey-text text-lighten-3 tooltipped"
                      data-position="right"
-                     data-tooltip="Keyword includes are good for adding terms or phrases that will make your results more specific">help_outline</i>
-               </h6>
-               <p>We will show results that contain any of these keywords, plus the keywords entered above.</p>
+                     data-tooltip="Good for adding terms or phrases to make your results more specific">help_outline</i></p>
                <div class="chips-container">
-                  <div class="chips chips-people-keywords">
-                     <input class=" custom-class" />
+                  <div class="chips chips-company-keywords">
+                     <input class="custom-class" />
                   </div>
                   <div class="chip-help">Press 'enter' to add</div>
                </div>
+
+               <br>
+               <h6>Keywords to exclude </h6>
+               <p>We will <b>not</b> show results that contain any of these keywords. <i class="material-icons blue-grey-text text-lighten-3 tooltipped"
+                 data-position="right"
+                 data-tooltip="Good for excluding words or phrases you do not want to see in your results - helps reduce false positives">help_outline</i></p>
+               <div class="chips-container">
+                  <div class="chips chips-company-keywords">
+                     <input class="custom-class" />
+                  </div>
+                  <div class="chip-help">Press 'enter' to add</div>
+               </div>
+
             </div>
 
             <div class="row center">
@@ -90,43 +103,28 @@
             $(".keywords-panel").slideToggle(300);
          });
 
-         $('.chips-people').chips({
-            placeholder: 'Enter people',
-            secondaryPlaceholder: 'Add another',
-            data: JSON.parse(sessionStorage.getItem('people')) || [],
-            onChipAdd: function (e, data) {
-               sessionStorage.setItem('people', JSON.stringify(M.Chips.getInstance($('.chips-people')).chipsData));
-            },
-            onChipDelete: function (e, data) {
-               sessionStorage.setItem('people', JSON.stringify(M.Chips.getInstance($('.chips-people')).chipsData));
-            },
-            autocompleteOptions: {
-               data: {
-                  //        'Apple': null,
-                  //       'Microsoft': null,
-                  //        'Google': null
-               },
-               limit: Infinity,
-               minLength: 1
-            }
-         });
-         $(".chips-people input").val(sessionStorage.getItem('people-input'));
-         $(".chips-people input").change(function (ev) {
-            sessionStorage.setItem('people-input', ev.target.value || '');
+         $(".chips-company input").val(sessionStorage.getItem('company-input'));
+         $(".chips-company input").change(function (ev) {
+            sessionStorage.setItem('company-input', ev.target.value || '');
          });
 
-         $('.chips-people-keywords').chips({
-            data: JSON.parse(sessionStorage.getItem('people-keywords')) || [],
+         $('.chips-company').chips({
+            placeholder: 'Enter name',
+            secondaryPlaceholder: 'Add another',
+         });
+
+         $('.chips-company-keywords').chips({
+            data: JSON.parse(sessionStorage.getItem('company-keywords')) || [],
             onChipAdd: function (e, data) {
-               sessionStorage.setItem('people-keywords', JSON.stringify(M.Chips.getInstance($('.chips-people-keywords')).chipsData));
+               sessionStorage.setItem('company-keywords', JSON.stringify(M.Chips.getInstance($('.chips-company-keywords')).chipsData));
             },
             onChipDelete: function (e, data) {
-               sessionStorage.setItem('people-keywords', JSON.stringify(M.Chips.getInstance($('.chips-people-keywords')).chipsData));
+               sessionStorage.setItem('company-keywords', JSON.stringify(M.Chips.getInstance($('.chips-company-keywords')).chipsData));
             }
          });
-         $(".chips-people-keywords input").val(sessionStorage.getItem('people-keywords-input'));
-         $(".chips-people-keywords input").change(function (ev) {
-            sessionStorage.setItem('people-keywords-input', ev.target.value || '');
+         $(".chips-company-keywords input").val(sessionStorage.getItem('company-keywords-input'));
+         $(".chips-company-keywords input").change(function (ev) {
+            sessionStorage.setItem('company-keywords-input', ev.target.value || '');
          });
       });
    </script>
